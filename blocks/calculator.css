@@ -1,17 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000000;
-}
-
 .calculator {
   font-family: "Roboto", sans-serif;
   background-color: #111827;
