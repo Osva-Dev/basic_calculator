@@ -10,10 +10,10 @@
     <div class="calculator">
       <div class="calculator__screen">0</div>
       <div class="calculator__buttons">
-        <button class="calculator__button">C</button>
-        <button class="calculator__button">←</button>
+        <button class="calculator__button" id="delete">C</button>
+        <button class="calculator__button" id="backSpace">←</button>
         <button class="calculator__button">/</button>
-        <button class="calculator__button">X</button>
+        <button class="calculator__button">*</button>
         <button class="calculator__button">7</button>
         <button class="calculator__button">8</button>
         <button class="calculator__button">9</button>
@@ -25,10 +25,13 @@
         <button class="calculator__button">1</button>
         <button class="calculator__button">2</button>
         <button class="calculator__button">3</button>
-        <button class="calculator__button calculator__button--equal">=</button>
+        <button class="calculator__button calculator__button--equal" id="equal">
+          =
+        </button>
         <button class="calculator__button calculator__button--zero">0</button>
         <button class="calculator__button">.</button>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
