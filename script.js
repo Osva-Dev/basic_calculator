@@ -1,5 +1,6 @@
 const screen = document.querySelector(".calculator__screen");
 const buttons = document.querySelectorAll(".calculator__button");
+let justCalculated = false;
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -47,10 +48,44 @@ document.addEventListener("keydown", (event) => {
     key === "/" ||
     key === "."
   ) {
-    if (screen.textContent === "0") {
+    if (justCalculated && key >= "0" && key <= "9") {
+      screen.textContent = key;
+    } else if (screen.textContent === "0" || screen.textContent === "ERROR") {
       screen.textContent = key;
     } else {
       screen.textContent += key;
     }
+
+    justCalculated = false;
+    return;
+  }
+
+  if (key === "Enter") {
+    event.preventDefault();
+
+    try {
+      screen.textContent = eval(screen.textContent);
+    } catch (error) {
+      screen.textContent = "ERROR";
+    }
+
+    justCalculated = true;
+    return;
+  }
+
+  if (key === "Backspace") {
+    if (screen.textContent.length === 1 || screen.textContent === "ERROR") {
+      screen.textContent = "0";
+    } else {
+      screen.textContent = screen.textContent.slice(0, -1);
+    }
+
+    justCalculated = false;
+    return;
+  }
+
+  if (key.toLowerCase() === "c") {
+    screen.textContent = "0";
+    justCalculated = false;
   }
 });
