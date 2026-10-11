@@ -35,3 +35,22 @@ buttons.forEach((button) => {
     }
   });
 });
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (
+    (key >= "0" && key <= "9") ||
+    key === "+" ||
+    key === "-" ||
+    key === "*" ||
+    key === "/" ||
+    key === "."
+  ) {
+    if (screen.textContent === "0") {
+      screen.textContent = key;
+    } else {
+      screen.textContent += key;
+    }
+  }
+});
