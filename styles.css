@@ -12,6 +12,7 @@ body {
 }
 
 .calculator {
+  font-family: "Roboto", sans-serif;
   background-color: #111827;
   width: 400px;
   max-width: 100%;
@@ -29,7 +30,7 @@ body {
   color: white;
   text-align: right;
   font-size: 36px;
-  padding: 4px;
+  padding: 24px;
 }
 
 .calculator__buttons {
